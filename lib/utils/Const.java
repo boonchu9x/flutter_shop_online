@@ -1,5 +1,5 @@
 package utils;
 
 class Const {
-    private static final int Delay = 276;
+    private static final int Delay = 2764;
 }
