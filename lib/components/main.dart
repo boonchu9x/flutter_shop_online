@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_shop_online/components/body.dart';
+import 'package:flutter_shop_online/utils/const.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() => runApp(MaterialApp(
@@ -21,26 +23,54 @@ class _HomeScreenState extends State<HomeScreen> {
       //change status bar color
       statusBarColor: Colors.grey,
       //theme dark or light
-      statusBarBrightness: Brightness.light,
+      //statusBarBrightness: Brightness.light,
     ));
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        //toolbar
+      appBar: buildAppBar(),
+      body: BodyMain(),
+    );
+  }
 
-        //back button
-        leading: IconButton(
-          icon: SvgPicture.asset("assets/icons/back.svg"),
+  AppBar buildAppBar() {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0.0,
+      //toolbar
+
+      //back button
+      leading: IconButton(
+        icon: SvgPicture.asset(
+          "assets/icons/back.svg",
+          color: textColor,
+        ),
+        onPressed: () {},
+      ),
+
+      //search icon
+      actions: <Widget>[
+        IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/search.svg",
+            color: textColor,
+          ),
           onPressed: () {},
         ),
 
-        actions: <Widget>[
-          IconButton(icon: SvgPicture.asset(""), onPressed: null)
-        ],
-      ),
+        //cart icon
+        IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/cart.svg",
+            color: textColor,
+          ),
+          onPressed: () {},
+        ),
+
+        //space between search icon & cart icon
+        SizedBox(
+          width: paddingDefault / 2,
+        )
+      ],
     );
   }
 }

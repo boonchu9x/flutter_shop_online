@@ -2,4 +2,11 @@ import 'package:flutter/material.dart';
 
 const textColor = Color(0xFF535353);
 const textColorLight = Color(0xFFACACAC);
-const defaultPadding = 20;
+const paddingDefault = 20.0;
+
+const List<String> lsCategory = [
+  "Hand bag",
+  "Jewellery",
+  "Footwear",
+  "Dresses"
+];
