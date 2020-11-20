@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_shop_online/components/body.dart';
+import 'file:///C:/Users/CanhLX.Hachinet/Desktop/Flutter/flutter_shop_online/lib/components/main/body.dart';
 import 'package:flutter_shop_online/utils/const.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: buildAppBar(),
-      body: BodyMain(),
+      body: Body(),
     );
   }
 
@@ -44,7 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
           "assets/icons/back.svg",
           color: textColor,
         ),
-        onPressed: () {},
+        onPressed: () {
+          SystemNavigator.pop(); //Exit app
+        },
       ),
 
       //search icon
