@@ -8,5 +8,9 @@ const List<String> lsCategory = [
   "Hand bag",
   "Jewellery",
   "Footwear",
+  "Dresses",
+  "Hand bag",
+  "Jewellery",
+  "Footwear",
   "Dresses"
 ];

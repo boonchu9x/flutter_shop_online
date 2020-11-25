@@ -72,7 +72,7 @@ class _CategoryState extends State<Category> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: paddingDefault),
       child: SizedBox(
-        height: 25,
+        height: 40,
         child: ListView.builder(
             //scroll horizontal (ngang)
             scrollDirection: Axis.horizontal,
@@ -85,25 +85,32 @@ class _CategoryState extends State<Category> {
     );
   }
 
-  Widget buildCategory(int index) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: paddingDefault),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              lsCategory[index],
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: textColorLight),
-            ),
-            SizedBox(
-              height: 4.0,
-            ),
-            Container(
-              height: 2,
-              width: 30,
-              color: posSelected == index ? Colors.black : Colors.transparent,
-            ),
-          ],
+  Widget buildCategory(int index) => GestureDetector(
+    onTap: (){
+      setState(() {
+        posSelected = index;
+      });
+    },
+    child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: paddingDefault),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                lsCategory[index],
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: posSelected == index ? Colors.black : textColorLight,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: paddingDefault / 4),
+                height: 2,
+                width: 40,
+                color: posSelected == index ? Colors.black : Colors.transparent,
+              ),
+            ],
+          ),
         ),
-      );
+  );
 }

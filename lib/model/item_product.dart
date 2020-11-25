@@ -26,7 +26,12 @@ class ItemProduct extends StatelessWidget {
               decoration: BoxDecoration(
                   color: product.color,
                   borderRadius: BorderRadius.circular(10.0)),
-              child: Image.asset(product.image),
+
+              //image item product
+              child: Hero(
+                tag: '${product.id}',
+                child: Image.asset(product.image),
+              ),
             ),
           ),
           SizedBox(
