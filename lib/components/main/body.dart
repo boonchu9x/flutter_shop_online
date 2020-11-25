@@ -72,7 +72,7 @@ class _CategoryState extends State<Category> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: paddingDefault),
       child: SizedBox(
-        height: 40,
+        height: 30,
         child: ListView.builder(
             //scroll horizontal (ngang)
             scrollDirection: Axis.horizontal,
@@ -86,12 +86,12 @@ class _CategoryState extends State<Category> {
   }
 
   Widget buildCategory(int index) => GestureDetector(
-    onTap: (){
-      setState(() {
-        posSelected = index;
-      });
-    },
-    child: Padding(
+        onTap: () {
+          setState(() {
+            posSelected = index;
+          });
+        },
+        child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: paddingDefault),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,11 +106,11 @@ class _CategoryState extends State<Category> {
               Container(
                 margin: EdgeInsets.only(top: paddingDefault / 4),
                 height: 2,
-                width: 40,
+                width: 30,
                 color: posSelected == index ? Colors.black : Colors.transparent,
               ),
             ],
           ),
         ),
-  );
+      );
 }
